@@ -38,7 +38,7 @@ Page({
   onMajorTap(e) {
     const major = e.currentTarget.dataset.major;
     wx.navigateTo({
-      url: '/pages/chat/chat?q=' + encodeURIComponent(major + '专业详细介绍')
+      url: '/pages/major-detail/major-detail?name=' + encodeURIComponent(major)
     });
   }
 });

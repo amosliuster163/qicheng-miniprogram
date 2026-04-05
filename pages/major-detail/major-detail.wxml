@@ -1,0 +1,92 @@
+<!-- 专业详情页面 -->
+<view class="container">
+  <!-- 加载中 -->
+  <view wx:if="{{loading}}" class="loading">
+    <text>加载中...</text>
+  </view>
+
+  <!-- 专业详情 -->
+  <view wx:else class="detail-section">
+    <view class="header">
+      <view class="major-name">{{major.name}}</view>
+      <view class="major-code">{{major.code}}</view>
+    </view>
+
+    <!-- 基本信息 -->
+    <view class="section">
+      <view class="section-title">基本信息</view>
+      <view class="info-item">
+        <text class="label">专业类别</text>
+        <text class="value">{{major.category}}</text>
+      </view>
+      <view class="info-item">
+        <text class="label">学位类型</text>
+        <text class="value">{{major.degree_type || '本科'}}</text>
+      </view>
+      <view class="info-item">
+        <text class="label">学习年限</text>
+        <text class="value">{{major.study_years || '4年'}}</text>
+      </view>
+    </view>
+
+    <!-- 专业介绍 -->
+    <view class="section">
+      <view class="section-title">专业介绍</view>
+      <view class="description">{{major.description}}</view>
+    </view>
+
+    <!-- 核心课程 -->
+    <view wx:if="{{major.core_courses}}" class="section">
+      <view class="section-title">核心课程</view>
+      <view class="course-list">
+        <view wx:for="{{major.core_courses}}" wx:key="*this" class="course-item">
+          {{item}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 就业信息 -->
+    <view class="section">
+      <view class="section-title">就业信息</view>
+      <view class="info-item">
+        <text class="label">就业率</text>
+        <text class="value highlight">{{major.employment_rate}}</text>
+      </view>
+      <view class="info-item">
+        <text class="label">薪资范围</text>
+        <text class="value highlight">{{major.salary_range}}</text>
+      </view>
+      <view class="info-item">
+        <text class="label">主要就业方向</text>
+        <text class="value">{{major.employment}}</text>
+      </view>
+    </view>
+
+    <!-- 适合人群 -->
+    <view wx:if="{{major.suitable_for}}" class="section">
+      <view class="section-title">适合人群</view>
+      <view class="description">{{major.suitable_for}}</view>
+    </view>
+
+    <!-- 顶尖院校 -->
+    <view wx:if="{{major.top_universities}}" class="section">
+      <view class="section-title">顶尖院校</view>
+      <view class="uni-list">
+        <view wx:for="{{major.top_universities}}" wx:key="*this" class="uni-item">
+          {{item}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 注意事项 -->
+    <view wx:if="{{major.cons}}" class="section warning">
+      <view class="section-title">注意事项</view>
+      <view class="description">{{major.cons}}</view>
+    </view>
+
+    <!-- AI问答入口 -->
+    <button class="ask-btn" bindtap="onAskAI">
+      向AI了解更多详情
+    </button>
+  </view>
+</view>

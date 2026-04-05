@@ -1,0 +1,75 @@
+<!-- 学校详情页面 -->
+<view class="container">
+  <!-- 加载中 -->
+  <view wx:if="{{loading}}" class="loading">
+    <text>加载中...</text>
+  </view>
+
+  <!-- 学校详情 -->
+  <view wx:else class="detail-section">
+    <view class="header">
+      <view class="uni-name">{{university.name}}</view>
+      <view class="uni-tags">
+        <text class="tag">{{university.level}}</text>
+        <text class="tag location">{{university.city}}</text>
+      </view>
+    </view>
+
+    <!-- 基本信息 -->
+    <view class="section">
+      <view class="section-title">基本信息</view>
+      <view class="info-item">
+        <text class="label">学校层次</text>
+        <text class="value highlight">{{university.level}}</text>
+      </view>
+      <view class="info-item">
+        <text class="label">所在城市</text>
+        <text class="value">{{university.city}}</text>
+      </view>
+      <view class="info-item">
+        <text class="label">院校类型</text>
+        <text class="value">{{university.type || '综合类'}}</text>
+      </view>
+    </view>
+
+    <!-- 学校介绍 -->
+    <view wx:if="{{university.description}}" class="section">
+      <view class="section-title">学校介绍</view>
+      <view class="description">{{university.description}}</view>
+    </view>
+
+    <!-- 热门专业 -->
+    <view wx:if="{{university.hot_majors}}" class="section">
+      <view class="section-title">热门专业</view>
+      <view class="major-list">
+        <view wx:for="{{university.hot_majors}}" wx:key="*this" class="major-item">
+          {{item}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 录取信息 -->
+    <view class="section">
+      <view class="section-title">录取信息</view>
+      <view class="info-item">
+        <text class="label">就业率</text>
+        <text class="value highlight">{{university.employment_rate}}</text>
+      </view>
+      <view wx:if="{{university.avg_salary}}" class="info-item">
+        <text class="label">平均薪资</text>
+        <text class="value highlight">{{university.avg_salary}}</text>
+      </view>
+    </view>
+
+    <!-- 适合人群 -->
+    <view wx:if="{{university.suitable_for}}" class="section">
+      <view class="section-title">适合人群</view>
+      <view class="description">{{university.suitable_for}}</view>
+    </view>
+
+    <!-- AI问答入口 -->
+    <button class="ask-btn" bindtap="onAskAI">
+      向AI了解报考建议
+    </button>
+  </view>
+</view>

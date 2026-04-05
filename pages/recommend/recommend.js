@@ -44,8 +44,6 @@ Page({
       });
 
       this.setData({ result: res, loading: false });
-
-    } catch (err) {
       console.error('推荐失败:', err);
       wx.showToast({ title: '网络错误', icon: 'error' });
       this.setData({ loading: false });

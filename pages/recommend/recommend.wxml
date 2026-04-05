@@ -28,7 +28,7 @@
   <view wx:if="{{result}}" class="result-section">
     <view class="section-title">推荐学校</view>
     
-    <view wx:for="{{result.schools}}" wx:key="name" class="school-card">
+    <view wx:for="{{result.recommendations}}" wx:key="name" class="school-card">
       <view class="school-name">{{item.name}}</view>
       <view class="school-info">
         <text class="tag">{{item.level}}</text>

@@ -1,0 +1,110 @@
+/* 专业详情样式 */
+
+.container {
+  padding: 32rpx;
+  background: #f5f5f5;
+}
+
+.loading {
+  text-align: center;
+  padding: 100rpx;
+  color: #999;
+}
+
+.detail-section {
+  background: #fff;
+  border-radius: 16rpx;
+}
+
+.header {
+  padding: 32rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.major-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.major-code {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 8rpx;
+}
+
+.section {
+  padding: 24rpx 32rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.section-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #07c160;
+  margin-bottom: 16rpx;
+}
+
+.info-item {
+  display: flex;
+  margin-bottom: 12rpx;
+}
+
+.label {
+  width: 160rpx;
+  color: #666;
+  font-size: 26rpx;
+}
+
+.value {
+  flex: 1;
+  color: #333;
+  font-size: 26rpx;
+}
+
+.value.highlight {
+  color: #07c160;
+  font-weight: bold;
+}
+
+.description {
+  color: #333;
+  font-size: 26rpx;
+  line-height: 1.6;
+}
+
+.course-list, .uni-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+}
+
+.course-item, .uni-item {
+  background: #f5f5f5;
+  padding: 8rpx 16rpx;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  color: #333;
+}
+
+.warning {
+  background: #fff7e6;
+}
+
+.warning .section-title {
+  color: #fa8c16;
+}
+
+.ask-btn {
+  width: 100%;
+  height: 88rpx;
+  background: #07c160;
+  color: #fff;
+  font-size: 32rpx;
+  margin-top: 32rpx;
+  border-radius: 12rpx;
+}
