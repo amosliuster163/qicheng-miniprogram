@@ -26,10 +26,10 @@
       <view class="feature-desc">10个热门专业详细介绍</view>
     </navigator>
 
-    <navigator url="/pages/university-detail/university-detail?name=南开大学&province=天津" class="feature-card">
+    <navigator url="/pages/universities/universities" class="feature-card">
       <view class="feature-icon">🏫</view>
       <view class="feature-title">学校大全</view>
-      <view class="feature-desc">985/211高校详情</view>
+      <view class="feature-desc">985/211/天津高校详情</view>
     </navigator>
   </view>
 

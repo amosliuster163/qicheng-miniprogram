@@ -4,6 +4,7 @@
     "pages/chat/chat",
     "pages/recommend/recommend",
     "pages/majors/majors",
+    "pages/universities/universities",
     "pages/major-detail/major-detail",
     "pages/university-detail/university-detail"
   ],

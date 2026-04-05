@@ -1,0 +1,60 @@
+<!-- 学校列表页面 -->
+<view class="container">
+  <!-- 类型切换 -->
+  <view class="type-tabs">
+    <view 
+      wx:for="{{types}}" 
+      wx:key="*this" 
+      class="type-tab {{currentType === item ? 'active' : ''}}"
+      data-type="{{item}}"
+      bindtap="onTypeChange"
+    >
+      {{item}}高校
+    </view>
+  </view>
+
+  <!-- 加载中 -->
+  <view wx:if="{{loading}}" class="loading">
+    <text>加载中...</text>
+  </view>
+
+  <!-- 学校列表 -->
+  <view wx:else class="uni-list">
+    <view 
+      wx:for="{{universities}}" 
+      wx:key="name" 
+      class="uni-card"
+      data-name="{{item.name}}"
+      bindtap="onUniversityTap"
+    >
+      <view class="uni-header">
+        <view class="uni-name">{{item.name}}</view>
+        <view class="uni-tags">
+          <text class="tag level">{{item.level}}</text>
+          <text class="tag location">{{item.city || item.province}}</text>
+        </view>
+      </view>
+      
+      <view wx:if="{{item.description}}" class="uni-desc">
+        {{item.description}}
+      </view>
+
+      <view wx:if="{{item.hot_majors}}" class="uni-majors">
+        <text class="label">热门专业：</text>
+        <text class="value">{{item.hot_majors.join('、')}}</text>
+      </view>
+
+      <view wx:if="{{item.employment_rate}}" class="uni-stats">
+        <view class="stat">
+          <text class="stat-label">就业率</text>
+          <text class="stat-value highlight">{{item.employment_rate}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view wx:if="{{!loading && universities.length === 0}}" class="empty">
+    <text>暂无数据</text>
+  </view>
+</view>
