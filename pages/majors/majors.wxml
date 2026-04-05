@@ -1,0 +1,32 @@
+<!-- 专业列表页面 -->
+<view class="container">
+  <!-- 搜索 -->
+  <view class="search-bar">
+    <input placeholder="搜索专业名称" bindinput="onSearch" />
+  </view>
+
+  <!-- 加载中 -->
+  <view wx:if="{{loading}}" class="loading">
+    <text>加载中...</text>
+  </view>
+
+  <!-- 专业列表 -->
+  <view wx:else class="major-list">
+    <view 
+      wx:for="{{majors}}" 
+      wx:key="name"
+      wx:if="{{!searchKey || item.name.toLowerCase().includes(searchKey) || item.category.toLowerCase().includes(searchKey)}}"
+      class="major-item"
+      data-major="{{item.name}}"
+      bindtap="onMajorTap"
+    >
+      <view class="major-name">{{item.name}}</view>
+      <view class="major-category">{{item.category}}</view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view wx:if="{{!loading && majors.length === 0}}" class="empty">
+    <text>暂无数据</text>
+  </view>
+</view>

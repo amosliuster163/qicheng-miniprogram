@@ -1,0 +1,46 @@
+<!-- 择校推荐页面 -->
+<view class="container">
+  <!-- 输入区域 -->
+  <view class="input-section">
+    <view class="section-title">输入你的情况</view>
+
+    <view class="form-item">
+      <text class="label">高考分数</text>
+      <input type="number" placeholder="例如: 600" value="{{score}}" bindinput="onScoreChange" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">所在省份</text>
+      <input placeholder="默认天津" value="{{province}}" bindinput="onProvinceChange" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">兴趣方向</text>
+      <input placeholder="例如: 计算机、金融" value="{{interest}}" bindinput="onInterestChange" />
+    </view>
+
+    <button class="submit-btn" bindtap="onSubmit" disabled="{{loading}}">
+      {{loading ? '分析中...' : '获取推荐'}}
+    </button>
+  </view>
+
+  <!-- 推荐结果 -->
+  <view wx:if="{{result}}" class="result-section">
+    <view class="section-title">推荐学校</view>
+    
+    <view wx:for="{{result.schools}}" wx:key="name" class="school-card">
+      <view class="school-name">{{item.name}}</view>
+      <view class="school-info">
+        <text class="tag">{{item.level}}</text>
+        <text class="location">{{item.location}}</text>
+      </view>
+      <view class="school-desc">{{item.reason}}</view>
+    </view>
+
+    <view class="tips">
+      <text>{{result.tips}}</text>
+    </view>
+
+    <button class="reset-btn" bindtap="onReset">重新推荐</button>
+  </view>
+</view>

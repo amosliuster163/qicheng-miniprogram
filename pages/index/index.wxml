@@ -1,0 +1,43 @@
+<!-- 首页 -->
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="logo">启程</view>
+    <view class="subtitle">高考志愿填报助手</view>
+  </view>
+
+  <!-- 功能入口 -->
+  <view class="features">
+    <navigator url="/pages/chat/chat" class="feature-card">
+      <view class="feature-icon">💬</view>
+      <view class="feature-title">AI问答</view>
+      <view class="feature-desc">问专业、问学校、问方向</view>
+    </navigator>
+
+    <navigator url="/pages/recommend/recommend" class="feature-card">
+      <view class="feature-icon">🎯</view>
+      <view class="feature-title">择校推荐</view>
+      <view class="feature-desc">根据分数智能推荐</view>
+    </navigator>
+
+    <navigator url="/pages/majors/majors" class="feature-card">
+      <view class="feature-icon">📚</view>
+      <view class="feature-title">专业大全</view>
+      <view class="feature-desc">740个专业详细介绍</view>
+    </navigator>
+  </view>
+
+  <!-- 热门问题 -->
+  <view class="hot-questions">
+    <view class="section-title">热门问题</view>
+    <navigator url="/pages/chat/chat?q=计算机专业学什么" class="question-item">
+      计算机专业学什么？
+    </navigator>
+    <navigator url="/pages/chat/chat?q=600分能报哪些学校" class="question-item">
+      600分能报哪些学校？
+    </navigator>
+    <navigator url="/pages/chat/chat?q=文科和理科有什么区别" class="question-item">
+      文科和理科有什么区别？
+    </navigator>
+  </view>
+</view>

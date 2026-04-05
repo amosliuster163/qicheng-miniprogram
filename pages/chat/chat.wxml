@@ -1,0 +1,38 @@
+<!-- AI问答页面 -->
+<view class="chat-container">
+  <!-- 消息列表 -->
+  <scroll-view class="message-list" scroll-y scroll-into-view="{{scrollToId}}">
+    <view wx:for="{{messages}}" wx:key="index" id="msg-{{index}}" 
+          class="message {{item.role}}">
+      <view class="message-content">{{item.content}}</view>
+    </view>
+    
+    <!-- 加载提示 -->
+    <view wx:if="{{loading}}" class="message assistant">
+      <view class="message-content loading">
+        <text>思考中...</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 输入区域 -->
+  <view class="input-area">
+    <input 
+      class="chat-input"
+      type="text"
+      placeholder="输入你的问题..."
+      value="{{inputText}}"
+      bindinput="onInput"
+      confirm-type="send"
+      bindconfirm="onSend"
+    />
+    <button class="send-btn" bindtap="onSend" disabled="{{loading || !inputText}}">
+      发送
+    </button>
+  </view>
+
+  <!-- 工具栏 -->
+  <view class="toolbar">
+    <button class="clear-btn" bindtap="onClear" size="mini">清空对话</button>
+  </view>
+</view>

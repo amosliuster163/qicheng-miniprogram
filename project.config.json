@@ -1,0 +1,14 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "qicheng-miniprogram",
+  "description": "启程 - 高考志愿填报问答系统",
+  "appid": "touristappid",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true
+  },
+  "compileType": "miniprogram"
+}
